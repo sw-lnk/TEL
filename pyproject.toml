@@ -1,0 +1,14 @@
+[project]
+name = "tel"
+version = "0.1.0"
+description = "Digitale unterstützung in der technische Einsatzleitung (TEL)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.116.1",
+    "nicegui>=2.22.1",
+    "passlib[bcrypt]>=1.7.4",
+    "pydantic[email]>=2.11.7",
+    "pyjwt>=2.10.1",
+    "sqlmodel>=0.0.24",
+]
