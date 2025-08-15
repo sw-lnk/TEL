@@ -1,19 +1,17 @@
-from typing import Optional
-
 from nicegui import ui
-from fastapi.responses import RedirectResponse
 
 from tel.frontend.theme import frame, menu
 from tel.frontend.utils import check_user_login, login_user
 
 
-async def login_page(redirect_to: str = '/') -> Optional[RedirectResponse]:
+async def login_page(redirect_to: str = '/') -> None:
     async def login() -> None:
         if await login_user(username.value, password.value, redirect_to):
             menu.refresh()
         
     if await check_user_login():
-        return RedirectResponse('/')
+        ui.navigate.to('/')
+        return None
     
     with frame():
         with ui.card().classes('absolute-center'):
