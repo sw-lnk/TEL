@@ -1,6 +1,6 @@
 [project]
 name = "tel"
-version = "0.1.1"
+version = "0.1.2"
 description = "Digitale unterstützung in der technische Einsatzleitung (TEL)"
 readme = "README.md"
 requires-python = ">=3.12"
