@@ -26,7 +26,7 @@ async def login_user(username: str, password: str, redirect_to: str = '/') -> No
     return None
 
 
-async def check_user_login() -> bool:
+async def check_user_login(superuser: bool = False) -> bool:
     token = app.storage.user.get("access_token", False)
     if not token:
         return False
@@ -34,5 +34,8 @@ async def check_user_login() -> bool:
     user = await get_current_user(token)
     if not user:
         return False
+    
+    if superuser:
+        return user.is_superuser
     
     return user.is_active

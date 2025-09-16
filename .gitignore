@@ -179,3 +179,6 @@ database.db
 
 # NiceGUI
 .nicegui/
+
+# Dev
+setup_dev.py
